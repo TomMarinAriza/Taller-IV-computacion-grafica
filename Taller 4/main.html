@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        .exercise-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú de Ejercicios</h1>
+
+    <!-- Menú de selección -->
+    <button onclick="mostrarSeccion('multiplicationTable')">Tabla de Multiplicar</button>
+    <button onclick="mostrarSeccion('rectangle')">Rectángulo de Caracteres</button>
+    <button onclick="mostrarSeccion('leapYear')">Años Bisiestos</button>
+    <button onclick="mostrarSeccion('numeroDistinto')">Ingresar Números Distintos</button>
+    <button onclick="mostrarSeccion('validarCorreo')">Validar Correo Electrónico</button>
+    <button onclick="mostrarSeccion('procesarCadenas')">Procesar Cadenas</button>
+
+    <!-- Secciones de ejercicios -->
+    <div id="multiplicationTable" class="exercise-section">
+        <h2>Tabla de Multiplicar</h2>
+        <label for="number">Número:</label>
+        <input type="number" id="number" placeholder="Ingrese un número">
+        <label for="longOfTable">Longitud de la tabla:</label>
+        <input type="number" id="longOfTable" placeholder="Ingrese la longitud">
+        <button onclick="showMultiplication()">Mostrar tabla</button>
+        <div id="results"></div>
+    </div>
+
+    <div id="rectangle" class="exercise-section">
+        <h2>Rectángulo de Caracteres</h2>
+        <label for="width">Ancho:</label>
+        <input type="number" id="width" placeholder="Ingrese el ancho">
+        <label for="height">Altura:</label>
+        <input type="number" id="height" placeholder="Ingrese la altura">
+        <label for="character">Letra:</label>
+        <input type="text" id="character" placeholder="Ingrese la letra a usar">
+        <button onclick="showRectangle()">Mostrar figura</button>
+        <div id="resultsRectangle"></div>
+    </div>
+
+    <div id="leapYear" class="exercise-section">
+        <h2>Años Bisiestos</h2>
+        <label for="startedYear">Digite el año de inicio</label>
+        <input type="number" id="startedYear">
+        <label for="endYear">Digite el año de finalización</label>
+        <input type="number" id="endYear">
+        <button onclick="showLeapYear()">Mostrar los años bisiestos</button>
+        <div id="leapsYears"></div>
+    </div>
+
+    <div id="numeroDistinto" class="exercise-section">
+        <h2>Introducir Números Distintos</h2>
+        <label for="cantidad">Cantidad de números a ingresar:</label>
+        <input type="number" id="cantidad" placeholder="Ingrese la cantidad de números">
+        <button onclick="comenzarIngreso()">Comenzar</button>
+        <div id="inputNumberSection" style="display: none;">
+            <label for="numero">Ingrese un número:</label>
+            <input type="number" id="numero" placeholder="Escriba un número">
+            <button onclick="ingresarNumero()">Ingresar Número</button>
+            <p id="mensaje"></p>
+        </div>
+        <div id="resultado"></div>
+    </div>
+
+    <div id="validarCorreo" class="exercise-section">
+        <h2>Validar Correo Electrónico</h2>
+        <label for="email">Ingrese un correo electrónico:</label>
+        <input type="text" id="email" placeholder="Ingrese su correo">
+        <button onclick="validarCorreo()">Validar Correo</button>
+        <p id="resultadoCorreo"></p>
+    </div>
+
+    <div id="procesarCadenas" class="exercise-section">
+        <h2>Procesar Cadenas</h2>
+        <label for="cantidadCadenas">Cantidad de cadenas a ingresar:</label>
+        <input type="number" id="cantidadCadenas" placeholder="Ingrese la cantidad">
+        <button onclick="iniciarProcesoCadenas()">Comenzar</button>
+        <div id="inputCadenasSection" style="display: none;">
+            <label for="cadena">Ingrese una cadena:</label>
+            <input type="text" id="cadena" placeholder="Escriba una cadena">
+            <button onclick="agregarCadena()">Agregar Cadena</button>
+            <p id="mensajeCadenas"></p>
+        </div>
+        <div id="resultadoCadenas"></div>
+    </div>
+
+    <script src="archivo.js"></script>
+
+    <script>
+        // Función para mostrar una sección y ocultar las demás
+        function mostrarSeccion(id) {
+            // Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.exercise-section');
+            secciones.forEach(seccion => {
+                seccion.style.display = 'none';
+            });
+
+            // Mostrar la sección seleccionada
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
